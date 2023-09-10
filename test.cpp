@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   test.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrhnizar <rrhnizar@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/09 13:34:09 by rrhnizar          #+#    #+#             */
-/*   Updated: 2023/09/10 15:37:06 by rrhnizar         ###   ########.fr       */
+/*   Created: 2023/09/10 13:55:05 by rrhnizar          #+#    #+#             */
+/*   Updated: 2023/09/10 13:57:25 by rrhnizar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#include <iostream>
 
 int main()
 {
-	try
-	{
-		Bureaucrat br("rida", 149);
-		br.DecrementGrade();
-		br.DecrementGrade();
-		// br.IncrementGrade();
-		std::cout << br.getName() << std::endl;
-		std::cout << br.getGrade() << std::endl;
-	}
-	catch(std::exception& ex)
-	{
-		std::cout << ex.what() << std::endl;
-	}
+	int x = 0; int y = 0;
+	std::cout << "enter number : " ;
+	std::cin >> x;
+	std::cout << std::endl;
+
+	std::cout << "enter number : " ;
+	std::cin >> y;
+	std::cout << std::endl;
+
+	std::cout << "result is : " << x / y; 
 	return 0;
 }

@@ -6,16 +6,23 @@
 /*   By: rrhnizar <rrhnizar@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 13:38:05 by rrhnizar          #+#    #+#             */
-/*   Updated: 2023/09/09 14:00:57 by rrhnizar         ###   ########.fr       */
+/*   Updated: 2023/09/10 15:31:20 by rrhnizar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat()
+Bureaucrat::Bureaucrat():name("rida"), Grade(1)
+{}
+
+Bureaucrat::Bureaucrat(const std::string Name, int grade) : name(Name)
 {
-	name = "rida";
-	Grade = 1;
+	if (grade < 1)
+		throw  GradeTooHighException();
+	else if (grade > 150)
+		throw GradeTooLowException(); 
+	else
+		Grade = grade;
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat &otherBureaucrat)
@@ -24,13 +31,14 @@ Bureaucrat::Bureaucrat(Bureaucrat &otherBureaucrat)
 	*this = otherBureaucrat;
 }
 
-Bureaucrat& Bureaucrat::operator=(Bureaucrat &otherBureaucrat)
+Bureaucrat& Bureaucrat::operator=(const Bureaucrat &otherBureaucrat)
 {
 	std::cout << "Bureaucrat: copy assignement operator overloading called" << std::endl;
 	if (this != &otherBureaucrat)
 	{
-		name = otherBureaucrat.name;
+		Grade = otherBureaucrat.Grade;
 	}
+	return *this;
 }
 
 Bureaucrat::~Bureaucrat()
@@ -38,21 +46,53 @@ Bureaucrat::~Bureaucrat()
 	std::cout << "Bureaucrat: destractor called" << std::endl;
 }
 
-std::string Bureaucrat::getName()
+std::string Bureaucrat::getName() const
 {
-	return Name;
+	return name;
 }
 
-int	getGrade()
+int	Bureaucrat::getGrade() const
 {
 	return Grade;
 }
 
-std::string& operator<<(Bureaucrat &bureaucrat)
+std::ostream& operator<<(std::ostream& os, Bureaucrat &bureaucrat)
 {
-	std::ostream os;
 	os << bureaucrat.getName();
 	os << ", bureaucrat grade ";
 	os << bureaucrat.getGrade();
-	
+	return os;
+}
+
+
+/*   function to implement */
+
+void	Bureaucrat::IncrementGrade()
+{
+	if (Grade == 1)
+	{
+		throw GradeTooHighException();
+	}
+	else
+		Grade--;
+}
+
+void	Bureaucrat::DecrementGrade()
+{
+	if (Grade == 150)
+	{
+		throw GradeTooLowException();
+	}
+	else
+		Grade++;
+}
+
+const char *Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return "Grade Too High\n";
+}
+
+const char*	Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return "Grade Too Low\n";
 }
