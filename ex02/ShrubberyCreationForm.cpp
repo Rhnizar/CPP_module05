@@ -6,13 +6,13 @@
 /*   By: rrhnizar <rrhnizar@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 20:55:34 by rrhnizar          #+#    #+#             */
-/*   Updated: 2023/09/10 22:44:35 by rrhnizar         ###   ########.fr       */
+/*   Updated: 2023/09/10 22:51:25 by rrhnizar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm():AForm()
+ShrubberyCreationForm::ShrubberyCreationForm():AForm("def", false, 145, 137)
 {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm& otherShrubberyCreationForm)

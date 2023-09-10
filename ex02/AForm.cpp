@@ -6,13 +6,13 @@
 /*   By: rrhnizar <rrhnizar@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 16:27:01 by rrhnizar          #+#    #+#             */
-/*   Updated: 2023/09/10 22:47:10 by rrhnizar         ###   ########.fr       */
+/*   Updated: 2023/09/10 22:50:44 by rrhnizar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 
-AForm::AForm():name("def_AForm"), isSigned(false), gradeSign(145), gradeExecute(137)
+AForm::AForm():name("def_AForm"), isSigned(false), gradeSign(1), gradeExecute(1)
 {}
 
 AForm::AForm(const std::string Name, bool IsSigned, const int GradeSign, const int GradeExecute): name(Name), isSigned(IsSigned), gradeSign(GradeSign), gradeExecute(GradeExecute) 
