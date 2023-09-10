@@ -6,7 +6,7 @@
 /*   By: rrhnizar <rrhnizar@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 13:38:05 by rrhnizar          #+#    #+#             */
-/*   Updated: 2023/09/10 16:11:54 by rrhnizar         ###   ########.fr       */
+/*   Updated: 2023/09/10 16:59:45 by rrhnizar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ Bureaucrat::Bureaucrat():name("rida"), Grade(1)
 
 Bureaucrat::Bureaucrat(const std::string Name, int grade) : name(Name)
 {
+	std::cout << "Bureaucrat: constractor the parameters called" << std::endl;
 	if (grade < 1)
 		throw  GradeTooHighException();
 	else if (grade > 150)
@@ -25,7 +26,7 @@ Bureaucrat::Bureaucrat(const std::string Name, int grade) : name(Name)
 		Grade = grade;
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat &otherBureaucrat)
+Bureaucrat::Bureaucrat(const Bureaucrat &otherBureaucrat) : name(otherBureaucrat.name)
 {
 	std::cout << "Bureaucrat: copy constractor called" << std::endl;
 	*this = otherBureaucrat;
@@ -46,7 +47,7 @@ Bureaucrat::~Bureaucrat()
 	std::cout << "Bureaucrat: destractor called" << std::endl;
 }
 
-std::string Bureaucrat::getName() const
+const std::string Bureaucrat::getName() const
 {
 	return name;
 }

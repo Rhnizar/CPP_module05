@@ -6,13 +6,13 @@
 #    By: rrhnizar <rrhnizar@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/09 13:33:41 by rrhnizar          #+#    #+#              #
-#    Updated: 2023/09/09 13:34:06 by rrhnizar         ###   ########.fr        #
+#    Updated: 2023/09/10 16:44:09 by rrhnizar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 Name = exec
 
-SRC = main.cpp Bureaucrat.cpp
+SRC = main.cpp Bureaucrat.cpp Form.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

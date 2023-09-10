@@ -6,7 +6,7 @@
 /*   By: rrhnizar <rrhnizar@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 13:38:05 by rrhnizar          #+#    #+#             */
-/*   Updated: 2023/09/10 15:31:20 by rrhnizar         ###   ########.fr       */
+/*   Updated: 2023/09/10 19:14:11 by rrhnizar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ Bureaucrat::Bureaucrat():name("rida"), Grade(1)
 
 Bureaucrat::Bureaucrat(const std::string Name, int grade) : name(Name)
 {
+	std::cout << "Bureaucrat: constractor the parameters called" << std::endl;
 	if (grade < 1)
 		throw  GradeTooHighException();
 	else if (grade > 150)
@@ -25,7 +26,7 @@ Bureaucrat::Bureaucrat(const std::string Name, int grade) : name(Name)
 		Grade = grade;
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat &otherBureaucrat)
+Bureaucrat::Bureaucrat(const Bureaucrat &otherBureaucrat): name(otherBureaucrat.name)
 {
 	std::cout << "Bureaucrat: copy constractor called" << std::endl;
 	*this = otherBureaucrat;
@@ -46,7 +47,7 @@ Bureaucrat::~Bureaucrat()
 	std::cout << "Bureaucrat: destractor called" << std::endl;
 }
 
-std::string Bureaucrat::getName() const
+const std::string Bureaucrat::getName() const
 {
 	return name;
 }
@@ -95,4 +96,17 @@ const char *Bureaucrat::GradeTooHighException::what() const throw()
 const char*	Bureaucrat::GradeTooLowException::what() const throw()
 {
 	return "Grade Too Low\n";
+}
+
+void	Bureaucrat::signForm(Form& form)
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << name << "signed " << form.getName();
+	}
+	catch(Bureaucrat::GradeTooLowException ex)
+	{
+		std::cout << name << "couldn’t sign" << form.getName() << "because" << ex.what() << std::endl;
+	}
 }
