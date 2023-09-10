@@ -6,13 +6,13 @@
 /*   By: rrhnizar <rrhnizar@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 16:27:01 by rrhnizar          #+#    #+#             */
-/*   Updated: 2023/09/10 19:08:32 by rrhnizar         ###   ########.fr       */
+/*   Updated: 2023/09/10 19:29:20 by rrhnizar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form():name("rida"), isSigned(0), gradeSign(1), gradeExecute(1)
+Form::Form():name("def_form"), isSigned(false), gradeSign(1), gradeExecute(1)
 {}
 
 Form::Form(const Form &otherForm): name(otherForm.name), gradeSign(otherForm.gradeSign), gradeExecute(otherForm.gradeExecute)
