@@ -6,7 +6,7 @@
 /*   By: rrhnizar <rrhnizar@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 15:42:05 by rrhnizar          #+#    #+#             */
-/*   Updated: 2023/09/10 22:37:29 by rrhnizar         ###   ########.fr       */
+/*   Updated: 2023/09/11 13:40:15 by rrhnizar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,7 @@ class AForm
 			public:
 				const char *what() const throw();
 		};
-		
 		void	beSigned(Bureaucrat& bureaucrat);
-
 		virtual void	execute(Bureaucrat const & executor) const = 0;
 };
 

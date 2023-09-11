@@ -6,7 +6,7 @@
 /*   By: rrhnizar <rrhnizar@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 20:55:34 by rrhnizar          #+#    #+#             */
-/*   Updated: 2023/09/10 22:51:25 by rrhnizar         ###   ########.fr       */
+/*   Updated: 2023/09/11 13:56:59 by rrhnizar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 ShrubberyCreationForm::ShrubberyCreationForm():AForm("def", false, 145, 137)
 {}
 
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm& otherShrubberyCreationForm)
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm& otherShrubberyCreationForm):AForm(otherShrubberyCreationForm)
 {
 	*this = otherShrubberyCreationForm;
 }
@@ -34,6 +34,19 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(ShrubberyCreationForm& o
 
 void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
-	(void)executor;
-	std::cout << "testttttt\n";
+	if (this->getSigned() && executor.getGrade() < this->getGradeExecute())
+	{
+		std::ofstream	outputFile;//Declare output file:
+		std::string		ouputFileName = executor.getName() + "_shrubbery";
+		
+		outputFile.open(ouputFileName);//Open the file:
+		if (!outputFile.is_open())//Check if the file was successfully opened:
+		{
+			std::cerr << "Error opening outputFile file." << std::endl;
+			return;
+		}
+		outputFile << "hfhhgigj";
+	}
+	else
+		throw ShrubberyCreationForm::GradeTooLowException();
 }
