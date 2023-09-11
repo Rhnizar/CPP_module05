@@ -6,7 +6,7 @@
 /*   By: rrhnizar <rrhnizar@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 13:34:09 by rrhnizar          #+#    #+#             */
-/*   Updated: 2023/09/11 15:20:01 by rrhnizar         ###   ########.fr       */
+/*   Updated: 2023/09/11 20:37:26 by rrhnizar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,13 @@ int main()
 		AForm *F = new ShrubberyCreationForm();
 		std::cout << *F;
 
-		Bureaucrat b;
+		Bureaucrat b("rr", 10);
 		F->beSigned(b);
 		F->execute(b);
+
+		b.executeForm(*F);
+
+		// ShrubberyCreationForm()
 		// Bureaucrat br("rida", 149);
 		
 		// Bureaucrat br2(br);

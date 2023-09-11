@@ -6,7 +6,7 @@
 /*   By: rrhnizar <rrhnizar@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 15:31:56 by rrhnizar          #+#    #+#             */
-/*   Updated: 2023/09/11 15:35:27 by rrhnizar         ###   ########.fr       */
+/*   Updated: 2023/09/11 19:52:44 by rrhnizar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,10 @@ void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
 	if (this->getSigned() && executor.getGrade() < this->getGradeExecute())
 	{
-		
+		if (rand() % 2 == 0)
+			std::cout << executor.getName() << "has been robotomized" << std::endl;
+		else
+			std::cout << "robotomy failed." << std::endl;
 	}
 	else
 		throw RobotomyRequestForm::GradeTooLowException();
