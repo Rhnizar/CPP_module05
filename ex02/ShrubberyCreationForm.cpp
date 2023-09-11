@@ -6,7 +6,7 @@
 /*   By: rrhnizar <rrhnizar@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 20:55:34 by rrhnizar          #+#    #+#             */
-/*   Updated: 2023/09/11 13:56:59 by rrhnizar         ###   ########.fr       */
+/*   Updated: 2023/09/11 15:49:23 by rrhnizar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,14 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 			std::cerr << "Error opening outputFile file." << std::endl;
 			return;
 		}
-		outputFile << "hfhhgigj";
+		outputFile << "   ^   \n";
+		outputFile << "  ^^^   \n";
+		outputFile << " ^^^^^  \n";
+		outputFile << "^^^^^^^ \n";
+		outputFile << "^^^^^^^^\n";
+		outputFile << "   |    \n";
+
+		outputFile.close();
 	}
 	else
 		throw ShrubberyCreationForm::GradeTooLowException();
