@@ -6,7 +6,7 @@
 /*   By: rrhnizar <rrhnizar@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 15:29:07 by rrhnizar          #+#    #+#             */
-/*   Updated: 2023/09/11 15:31:38 by rrhnizar         ###   ########.fr       */
+/*   Updated: 2023/09/12 12:00:12 by rrhnizar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define ROBOTOMYREQUESTFORM_HPP
 
 #include "AForm.hpp"
+#include <cstdlib> // Include this for std::rand()
 
 class RobotomyRequestForm: public AForm
 {

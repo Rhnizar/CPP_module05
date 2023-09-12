@@ -6,7 +6,7 @@
 /*   By: rrhnizar <rrhnizar@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 13:34:09 by rrhnizar          #+#    #+#             */
-/*   Updated: 2023/09/12 00:13:41 by rrhnizar         ###   ########.fr       */
+/*   Updated: 2023/09/12 12:17:41 by rrhnizar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int main()
 		AForm* rrf;
 		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
 
+		(void)rrf;
 		// AForm *F = new ShrubberyCreationForm();
 		// std::cout << *F;
 

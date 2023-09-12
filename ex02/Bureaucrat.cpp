@@ -6,7 +6,7 @@
 /*   By: rrhnizar <rrhnizar@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 13:38:05 by rrhnizar          #+#    #+#             */
-/*   Updated: 2023/09/11 20:03:09 by rrhnizar         ###   ########.fr       */
+/*   Updated: 2023/09/12 11:40:41 by rrhnizar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ void	Bureaucrat::signForm(AForm& form)
 		form.beSigned(*this);
 		std::cout << name << "signed " << form.getName();
 	}
-	catch(Bureaucrat::GradeTooLowException ex)
+	catch(Bureaucrat::GradeTooLowException& ex)
 	{
 		std::cout << name << "couldn’t sign" << form.getName() << "because" << ex.what() << std::endl;
 	}

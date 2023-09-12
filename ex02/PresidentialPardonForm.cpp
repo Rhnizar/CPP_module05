@@ -6,13 +6,13 @@
 /*   By: rrhnizar <rrhnizar@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 15:40:52 by rrhnizar          #+#    #+#             */
-/*   Updated: 2023/09/11 19:54:46 by rrhnizar         ###   ########.fr       */
+/*   Updated: 2023/09/12 12:12:29 by rrhnizar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm():AForm("def", false, 25, 5)
+PresidentialPardonForm::PresidentialPardonForm():AForm("def", 25, 5)
 {}
 
 PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm& otherPresidentialPardonForm):AForm(otherPresidentialPardonForm)

@@ -6,7 +6,7 @@
 /*   By: rrhnizar <rrhnizar@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 13:34:21 by rrhnizar          #+#    #+#             */
-/*   Updated: 2023/09/10 19:09:30 by rrhnizar         ###   ########.fr       */
+/*   Updated: 2023/09/12 11:38:00 by rrhnizar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include "Form.hpp"
 
+class Form;
 class Bureaucrat
 {
 	private:

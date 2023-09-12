@@ -6,7 +6,7 @@
 /*   By: rrhnizar <rrhnizar@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 15:42:05 by rrhnizar          #+#    #+#             */
-/*   Updated: 2023/09/11 10:53:08 by rrhnizar         ###   ########.fr       */
+/*   Updated: 2023/09/12 12:06:41 by rrhnizar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include "Bureaucrat.hpp"
 
+class Bureaucrat;
 class Form
 {
 	private:
@@ -25,7 +26,7 @@ class Form
 	public:
 		Form();//default destractor
 		Form(const Form& otherForm);//copy constractor
-		Form(const std::string Name, bool IsSigned, const int GradeSign, const int GradeExecute);// constractor with parameters
+		Form(const std::string Name, const int GradeSign, const int GradeExecute);// constractor with parameters
 		Form& operator=(const Form& otherForm);//copy assignement operator overloading 
 		~Form();// destractor
 

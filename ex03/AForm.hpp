@@ -6,7 +6,7 @@
 /*   By: rrhnizar <rrhnizar@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 15:42:05 by rrhnizar          #+#    #+#             */
-/*   Updated: 2023/09/11 13:40:15 by rrhnizar         ###   ########.fr       */
+/*   Updated: 2023/09/12 12:13:31 by rrhnizar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class AForm
 		const int gradeExecute;
 	public:
 		AForm();//default destractor
-		AForm(const std::string Name, bool IsSigned, const int GradeSign, const int GradeExecute);
+		AForm(const std::string Name, const int GradeSign, const int GradeExecute);
 		AForm(const AForm& otherAFORM);//copy constractor
 		AForm& operator=(const AForm& otherAFORM);//copy assignement operator overloading 
 		~AForm();// destractor
